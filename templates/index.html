@@ -1,0 +1,62 @@
+{% extends 'template.html' %}
+<html>
+  <head>
+    {% block head %}
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>{% block title %}{% endblock %}Eye of God</title>
+    {% endblock %}
+  </head>
+  <style>
+ 
+  </style>
+  <body>
+    
+              <div id="content">
+              {% block content %}
+      <div class="row">
+        <div class="col l3"></div>
+        <div class="col l8">
+          <table class="highlight">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Tweets</th>
+                <th>Sentiments</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for twitter in user %}
+              <tr>
+                <th>@{{ twitter.screen_name}}</th>
+                <th>{{ twitter.text}}</th>
+                <th>{{ twitter.sentiment }}</th>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+     
+      {% endblock %}
+    </div>
+
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+      var instance = M.Sidenav.getInstance(elem);
+      </script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

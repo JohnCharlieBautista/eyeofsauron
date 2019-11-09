@@ -1,0 +1,147 @@
+{% extends 'template.html' %}
+<html>
+  <head>
+    {% block head %}
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    <title>{% block title %}{% endblock %}Eye of God</title>
+    {% endblock %}
+  </head>
+  <style>
+ 
+  </style>
+  <body>  
+    {% block content %}
+    <div class="row">
+        <div class="col l3"></div>
+        <div class="col l8">
+            <div class="row">
+                
+                <div class="col l6">
+                    <a href="{{url_for('company', company_name='SunLifePH')}}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">Sun Life</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col l6">
+                <a href="{{url_for('company', company_name='PruLifeUK')}}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">Pru Life</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l6">
+                    <a href="{{url_for('company', company_name='ManulifePH')}}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">Manulife</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col l6">
+                <a href="{{url_for('company', company_name='FWDLife')}}">
+                    <div class="card">
+                        
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">FWD Life</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col l6">
+                <a href="{{url_for('company', company_name='Cocolife')}}">
+                    <div class="card">
+                        
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">Cocolife</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col l6">
+                <a href="{{url_for('company', company_name='InsularLife')}}">
+                    <div class="card">
+                        
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">Insular Life</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col l6">
+                <a href="{{url_for('company', company_name='BDOLife')}}">
+                    <div class="card">
+                        
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">BDO Life</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col l6">
+                <a href="{{url_for('company', company_name='AXALife')}}">
+                    <div class="card">
+                        
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">AXA Life</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col l6">
+                <a href="{{url_for('company', company_name='ChinabankLife')}}">
+                    <div class="card">
+                        
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg" height="150" width="20">
+                            <span class="card-title">China Bank Life</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>        
+    {% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+     
+      {% endblock %}
+    </div>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+       </script>
+       <script>
+            $(document).ready(function(){
+              $('.sidenav').sidenav();
+            });
+            var instance = M.Sidenav.getInstance(elem);
+            </script>
+  </body>
+</html>

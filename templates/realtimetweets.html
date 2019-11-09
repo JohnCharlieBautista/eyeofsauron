@@ -1,0 +1,71 @@
+{% extends 'template.html' %}
+<html>
+  <head>
+    {% block head %}
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    <title>{% block title %}{% endblock %}Eye of God</title>
+    {% endblock %}
+  </head>
+  <style>
+ 
+  </style>
+  <body>  
+    {% block content %}
+    <div class="row">
+    <div class="col s3"></div>
+      <div class="col s9">
+
+      <table class="highlight">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Tweets</th>
+          <th>Location</th>
+          <th>Add Client</th>
+          <th>Accept</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for tweets in user %}
+        <tr>
+            
+            <th>{{ tweets.screen_name }}</th>
+            <th>{{ tweets.text }}</th>
+            <th>{{ tweets.location }}</th>
+            
+          <th><a class="waves-effect waves-light btn-floating btn green darken-4" href="{{ url_for('selected', id=tweets._id)}}"><i class="material-icons">add</i></th>
+          <th><a class="waves-effect waves-light btn-floating btn " href="{{tweets.link}}" style="margin-left: 5px;"><i class="material-icons">person_add</i></a></th>
+            
+          </tr>
+          {% endfor %}
+  
+      </tbody>
+      <h1>{{search}}</h>
+      </table></div>
+      </div>
+      {% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+     
+      {% endblock %}
+    </div>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js">
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+       </script>
+       <script>
+            $(document).ready(function(){
+              $('.sidenav').sidenav();
+            });
+            var instance = M.Sidenav.getInstance(elem);
+            </script>
+  </body>
+</html>
