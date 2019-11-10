@@ -44,6 +44,10 @@ def realtimetweets():
     users = list(map(lambda x: x, products.find()))
     return render_template('realtimetweets.html', user=users)
 
+@app.route('/chatbot', methods=['GET', 'POST'])
+def chatbot():
+    return render_template('chatbot.html')
+
 @app.route('/selected/<id>', methods=['GET', 'POST'])
 def selected(id):
 

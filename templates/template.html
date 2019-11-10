@@ -6,50 +6,60 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <title>{% block title %}{% endblock %}Eye of God</title>
+    <title>{% block title %}Eye of Sauron{% endblock %}</title>
     {% endblock %}
   </head>
   <style>
- 
-  </style>
-  <body>
-    
-    
-        <div class="wrapper">
-            <nav class="grey darken-3 left" style="height: 70px;">
-              <ul id="nav-mobile" class="left hide-on-med-and-down" style="margin-left: 24%;">
-                <li><h5 style="margin-top: 10%;"></h5></li>
-              </ul>
-            </nav>
-          </div>          
+  .bod{
+    background-color:#F2D8D8;
+  }
+ .sidenav {
+   background-color:#F2F2F2;
+   
+ }
+ .lol{
+   background-color:#F2F2F2;
+ }
+ .wav{
+  background-color: #A60303;
 
-          <!-- SIDE NAVIGATION BAR -->
-          <div class="row">
-            <div class="col s4 m4">
-              <ul id="slide-out" class="sidenav sidenav-fixed white-text" style="background-color: #222222;">
-                <li>
-                  <div class="nav-wrapper grey darken-3 z-depth-5">
-                    <!-- <img src="/static/logo.png" height="65" width="280" style="margin-left: 5px; margin-bottom: -15px;"> -->
-                  </div>
-                </li>
-                <li class="grey darken-3" style="margin-top: 50%;"> 
-                  <a class="waves-effect white-text" href="{{url_for('index')}}">Sentiment Analysis</a>
-                </li>
-                <li class="grey darken-3" style="margin-top: 5px;">
-                  <a class="waves-effect white-text" href="{{url_for('realtimetweets')}}">Tweet Selection</a>
-                </li>
-                <li class="grey darken-3" style="margin-top: 5px;">
-                  <a class="waves-effect white-text" href="{{url_for('addclients')}}">Selected Tweets</a>
-                </li>
-                <li class="grey darken-3" style="margin-top: 5px;">
-                  <a class="waves-effect white-text" href="{{url_for('scout')}}">Scout Competitors</a>
-                </li>
-              </ul>
-            </div> 
-          </div>
-          <div id="content">
-              {% block content %}
-             
+ }
+
+ li.hov:hover {
+   background-color: #BF5A6C;
+}
+  </style>
+  <body class="bod">
+    
+      <!-- SIDE NAVIGATION BAR -->
+      <div class="row">
+        <div class="col s4 m4">
+          <ul id="slide-out" class="sidenav sidenav-fixed white-text">
+            <li >
+              <div class="nav-wrapper">
+                <img src="/static/logo.png" height="95" width="280" style="padding-left: 8%;">
+              </div>
+            </li>
+            <li class="hov" style="margin-top: 30%;"> 
+              <a class="waves-effect waves-orange white-text wav" href="{{url_for('index')}}">Sentiment Analysis</a>
+            </li>
+            <li class="hov" style="margin-top: 5px;">
+              <a class="waves-effect waves-orange white-text wav" href="{{url_for('realtimetweets')}}">Potential Clients</a>
+            </li>
+            <li class="hov" style="margin-top: 5px;">
+              <a class="waves-effect waves-orange white-text wav" href="{{url_for('addclients')}}">Archives</a>
+            </li>
+            <li class="hov" style="margin-top: 5px;">
+              <a class="waves-effect waves-orange white-text wav " href="{{url_for('scout')}}">Scout Competitors</a>
+            </li>
+            <li class="hov" style="margin-top: 5px;">
+              <a class="waves-effect waves-orange white-text wav " href="{{url_for('chatbot')}}">ChatBots</a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+      <div id="content">
+          {% block content %}
       {% endblock %}</div>
     <div id="footer">
       {% block footer %}

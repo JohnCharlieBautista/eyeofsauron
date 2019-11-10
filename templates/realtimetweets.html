@@ -1,4 +1,4 @@
-{% extends 'template.html' %}
+  {% extends 'template.html' %}
 <html>
   <head>
     {% block head %}
@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     
-    <title>{% block title %}{% endblock %}Eye of God</title>
+    <title>{% block title %}Eye of Sauron{% endblock %}</title>
     {% endblock %}
   </head>
   <style>
@@ -17,39 +17,46 @@
   </style>
   <body>  
     {% block content %}
+    <div class="wrapper"">
+      <nav class="lol left" style="height: 80px; margin-top: -20px; margin-bottom: 30px;">
+        <ul id="nav-mobile" class="left hide-on-med-and-down " style="margin-left: 25%;">
+          <li><h5 style="margin-top: 14%; color:black; font-weight: 700;">Potential Clients</h5></li>
+        </ul>
+      </nav>
+    </div>
     <div class="row">
-    <div class="col s3"></div>
-      <div class="col s9">
-
-      <table class="highlight">
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Tweets</th>
-          <th>Location</th>
-          <th>Add Client</th>
-          <th>Accept</th>
-        </tr>
-      </thead>
-      <tbody>
-          {% for tweets in user %}
-        <tr>
-            
-            <th>{{ tweets.screen_name }}</th>
-            <th>{{ tweets.text }}</th>
-            <th>{{ tweets.location }}</th>
-            
-          <th><a class="waves-effect waves-light btn-floating btn green darken-4" href="{{ url_for('selected', id=tweets._id)}}"><i class="material-icons">add</i></th>
-          <th><a class="waves-effect waves-light btn-floating btn " href="{{tweets.link}}" style="margin-left: 5px;"><i class="material-icons">person_add</i></a></th>
-            
-          </tr>
-          {% endfor %}
-  
-      </tbody>
-      <h1>{{search}}</h>
-      </table></div>
+        <div class="col l4"></div>
+        <div class="col l7">
+            <div class="row z-depth-3" style="border-radius: 8px;">
+                <div class="col l12">
+                  <table class="highlight">
+                    <thead>
+                      <tr>
+                        <th>Username</th>
+                        <th>Tweets</th>
+                        <th>Location</th>
+                        <th>Add Client</th>
+                        <th>Account</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for tweets in user %}
+                      <tr>
+                        <td>@{{ tweets.screen_name}}</td>
+                        <td>{{ tweets.text}}</td>
+                        <td>{{ tweets.location }}</td>
+                        <td style="text-align: center;"><a class="waves-effect waves-light btn-floating btn green darken-4" href="{{ url_for('selected', id=tweets._id)}}"><i class="material-icons">add</i></td>
+                        <td style="text-align: center;"><a class="waves-effect waves-light btn-floating btn" href="{{tweets.link}}" style="margin-left: 5px;"><i class="material-icons">person_add</i></a></td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
       </div>
-      {% endblock %}</div>
+    
+      {% endblock %}</title>
     <div id="footer">
       {% block footer %}
      
